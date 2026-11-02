@@ -15,6 +15,14 @@ def load_model():
 def read_root():
     return {"Hello": "World"}
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+  return {"message": "Hello World"}
 
 @app.post("/get_prediction")
 def get_prediction(request: list[dict]):
